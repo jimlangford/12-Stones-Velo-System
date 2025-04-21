@@ -1,0 +1,12 @@
+import { saveEntry } from 'backend/scrollEntryHandler.jsw';
+
+export async function submit(data) {
+  ['name','article','scroll','statement'].forEach(k=>{
+    data[k]=(data[k]||'').toString().trim();
+  });
+  if(!data.name||!data.statement){
+    throw new Error('Name and statement required');
+  }
+  const entryId = await saveEntry(data);
+  return { status:'ok', entryId };
+}

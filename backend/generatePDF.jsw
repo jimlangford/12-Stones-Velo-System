@@ -1,0 +1,15 @@
+import { get } from 'wix-data';
+import pdfkit from 'pdfkit-wix';
+
+export async function createPdf(entryId){
+  const e = await get('Testimonies', entryId);
+  const doc = new pdfkit();
+  doc.fontSize(18).text('12 Stones Charter – Testimony',{align:'center'});
+  doc.moveDown().fontSize(12);
+  doc.text(`Name: ${e.name}`);
+  doc.text(`Article: ${e.article}`);
+  doc.text(`Scroll: ${e.scroll}`);
+  doc.moveDown().text(e.statement,{align:'justify'});
+  doc.end();
+  return await doc.getBuffer();
+}

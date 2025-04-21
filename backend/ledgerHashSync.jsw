@@ -1,0 +1,12 @@
+import { insert, get } from 'wix-data';
+import { sha256 } from 'backend/hash-utils.jsw';
+
+export async function recordHash(entryId){
+  const e = await get('Testimonies', entryId);
+  const hash = await sha256(`${e.name}|${e.article}|${e.scroll}|${e.statement}|${e.created}`);
+  return insert('Ledger', {
+    entryId,
+    sha256: hash,
+    timestamp: new Date()
+  });
+}

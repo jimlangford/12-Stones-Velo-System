@@ -1,0 +1,9 @@
+import { insert } from 'wix-data';
+import { recordHash } from 'backend/ledgerHashSync.jsw';
+
+export async function saveEntry(entry){
+  entry.created = new Date();
+  const saved = await insert('Testimonies', entry);
+  await recordHash(saved._id);
+  return saved._id;
+}
