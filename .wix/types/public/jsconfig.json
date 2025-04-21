@@ -1,1 +1,0 @@
-{"extends":"..\\wix-code-types\\configs\\tsconfig.public","compilerOptions":{"composite":true,"noEmit":false,"paths":{"backend/*.web.js":["..\\..\\..\\src\\backend\\*.web.js"],"backend/*.web":["..\\..\\..\\src\\backend\\*.web.js"]},"outDir":"build","rootDir":"..\\..\\.."},"include":["..\\..\\..\\src\\public\\**\\*","..\\..\\..\\src\\backend\\**\\*.web.js","..\\backend.d.ts"]}
