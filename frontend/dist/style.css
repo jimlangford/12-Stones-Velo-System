@@ -1,0 +1,30 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f9fbfd;
+  margin: 0;
+  padding: 2rem;
+}
+header {
+  background: #003344;
+  color: white;
+  padding: 2rem;
+  text-align: center;
+}
+.button-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin: 2rem 0;
+}
+.button {
+  padding: 1rem 2rem;
+  background: #004477;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+}
+.button.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}

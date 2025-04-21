@@ -1,4 +1,4 @@
-name: 🚀 GitHub Pages Deploy (Direct)
+name: GitHub Pages Auto Deploy
 
 on:
   push:
@@ -11,12 +11,11 @@ permissions:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
-      - name: 📥 Checkout Repo
+      - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: 🚀 Deploy frontend/dist to GitHub Pages
+      - name: Deploy frontend/dist to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
