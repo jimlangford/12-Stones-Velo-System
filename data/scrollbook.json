@@ -1,0 +1,13 @@
+{
+  "articles": [
+    { "id": 1, "title": "Article I - Foundation" },
+    { "id": 2, "title": "Article II - Peacekeeper Authority" },
+    { "id": 13, "title": "Article XIII - Justice Protocols" },
+    { "id": 28, "title": "Article XXVIII - Voice of the Ancestors" }
+  ],
+  "scrolls": [
+    { "id": "00", "name": "Scroll 00 - Genesis" },
+    { "id": "13", "name": "Scroll 13 - Peacekeeper Enforcement" },
+    { "id": "14", "name": "Scroll 14 - AI Treaty Engine" }
+  ]
+}

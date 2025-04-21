@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Submit Testimony</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <h2>📝 Submit Your Testimony</h2>
+  <form id="testimonyForm">
+    <label>Name:</label>
+    <input type="text" name="name" />
+    <label>Charter Article:</label>
+    <select name="article">
+      <option>Article I - Foundation</option>
+      <option>Article XIII - Justice Protocols</option>
+      <option>Article XXVIII - Voice of the Ancestors</option>
+    </select>
+    <label>Scroll:</label>
+    <select name="scroll">
+      <option>Scroll 00 - Genesis</option>
+      <option>Scroll 13 - Peacekeeper Enforcement</option>
+    </select>
+    <label>Statement:</label>
+    <textarea name="statement" rows="5"></textarea>
+    <button type="submit">📤 Submit</button>
+  </form>
+  <script>
+    document.getElementById('testimonyForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert("✅ Testimony saved (mock)");
+    });
+  </script>
+</body>
+</html>
