@@ -1,0 +1,1 @@
+{"version":3,"file":"extractAndBundlePackages.d.ts","sourceRoot":"","sources":["../../../scripts/generate-model-packages-dts/extractAndBundlePackages.ts"],"names":[],"mappings":"AAIA,OAAO,EAAE,cAAc,EAAE,MAAM,UAAU,CAAC;AAe1C,OAAO,EAAE,cAAc,EAAE,MAAM,UAAU,CAAC;AAoI1C,QAAA,MAAM,wBAAwB,gBACf,cAAc,KAC1B,QAAQ,cAAc,EAAE,CAc1B,CAAC;AAEF,OAAO,EAAE,wBAAwB,EAAE,CAAC"}

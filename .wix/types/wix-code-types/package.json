@@ -1,0 +1,106 @@
+{
+  "name": "@wix/wix-code-types",
+  "version": "2.0.14579",
+  "description": "Types for Velo by Wix",
+  "scripts": {
+    "lint": "eslint './src/**' './test/**' './scripts/**'",
+    "build": "npm run copy-type-templates && npm run copy-node-types && npm run generate-model-docworks-dts && npm run generate-model-packages-dts && npm run generate-wix-sdk-contextual-client && npm run patch-declarations && npm run generate-full-wix-code-types && npm run generate-module-list && npm run generate-wix-sdk-list && npm run generate-components-data && npm run typescript",
+    "typescript": "tsc -p ./tsconfig.json",
+    "build:beta": "DOCS_BRANCH=metro-packages npm run build",
+    "test": "jest",
+    "test:silent": "yarn test --reporters jest-silent-reporter",
+    "test:debug": "node --inspect node_modules/.bin/p",
+    "copy-type-templates": "ts-node scripts/copy-type-templates/main.ts",
+    "copy-node-types": "ts-node scripts/copy-node-types/main.ts",
+    "patch-declarations": "ts-node scripts/ast-patches/main.ts",
+    "generate-components-data": "ts-node scripts/generate-components-data/main.ts",
+    "generate-model-docworks-dts": "ts-node scripts/generate-model-docworks-dts/main.ts",
+    "generate-model-packages-dts": "ts-node scripts/generate-model-packages-dts/main.ts",
+    "generate-full-wix-code-types": "ts-node scripts/generate-full-wix-code-types/main.ts",
+    "generate-module-list": "ts-node scripts/generate-wix-module-list/main.ts",
+    "generate-wix-sdk-contextual-client": "ts-node scripts/generate-wix-sdk-contextual-client/main.ts",
+    "generate-wix-sdk-list": "ts-node scripts/generate-wix-sdk-list/main.ts",
+    "serve": "http-server --cors"
+  },
+  "main": "build/src/index.js",
+  "types": "build/src/index.d.ts",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "license": "MIT",
+  "files": [
+    "dist",
+    "configs",
+    "build"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
+  "dependencies": {
+    "@wix/editor-elements-semantic-classnames": "^1.148.0",
+    "@wix/wix-code-common": "^1.0.615"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.26.9",
+    "@types/fs-extra": "^9.0.13",
+    "@types/jest": "^27.5.2",
+    "@types/lodash": "^4.17.16",
+    "@types/node": "^18.19.86",
+    "@types/pacote": "^11.1.8",
+    "@types/tmp": "^0.2.6",
+    "@wix/eslint-config-yoshi": "^6.134.0",
+    "@wix/sdk-types": "^1.13.10",
+    "babel-loader": "^8.4.1",
+    "commander": "^9.5.0",
+    "docworks-cli": "2.0.0",
+    "docworks-dts": "^2.0.1",
+    "docworks-repo": "^1.10.20",
+    "eslint": "^8.57.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "fs-extra": "^8.1.0",
+    "http-server": "^14.1.1",
+    "husky": "^3.1.0",
+    "jest": "^26.6.3",
+    "jest-silent-reporter": "^0.6.0",
+    "lint-staged": "^12.5.0",
+    "lodash": "^4.17.21",
+    "pacote": "^12.0.3",
+    "prettier": "^1.19.1",
+    "raw-loader": "^4.0.2",
+    "rollup": "^2.79.2",
+    "rollup-plugin-dts": "^4.2.3",
+    "shelljs": "^0.9.2",
+    "tmp": "^0.2.3",
+    "ts-jest": "^26.5.6",
+    "ts-loader": "^9.5.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^4.9.5",
+    "webpack": "~5.89.0",
+    "webpack-bundle-analyzer": "^4.10.2",
+    "webpack-cli": "^4.10.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix"
+    ],
+    "**/*": "prettier --write --ignore-unknown"
+  },
+  "wix": {
+    "artifact": {
+      "groupId": "com.wixpress.wixcode",
+      "artifactId": "wix-code-types",
+      "targets": {
+        "static": {
+          "folderToUpload": "dist"
+        }
+      }
+    }
+  },
+  "falconPackageHash": "67b603195d2c6659d28f0328d3dcddf92c24d4cd14e07d12219a7f6b"
+}

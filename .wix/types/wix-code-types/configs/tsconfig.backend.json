@@ -1,0 +1,8 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "typeRoots": ["../"],
+    "lib": ["ES2020"],
+    "types": ["dist/types/backend", "dist/types/node"]
+  }
+}

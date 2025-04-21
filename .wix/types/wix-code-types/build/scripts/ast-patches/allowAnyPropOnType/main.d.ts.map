@@ -1,0 +1,1 @@
+{"version":3,"file":"main.d.ts","sourceRoot":"","sources":["../../../../scripts/ast-patches/allowAnyPropOnType/main.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,MAAM,YAAY,CAAC;AAG5B,MAAM,WAAW,eAAe;IAC9B,UAAU,EAAE,MAAM,CAAC;IACnB,IAAI,EAAE,MAAM,CAAC;CACd;AAaD,eAAO,MAAM,mBAAmB,QAAS,GAAG,UAAU,kBAMrD,CAAC"}
