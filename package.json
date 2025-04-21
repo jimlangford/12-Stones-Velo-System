@@ -1,13 +1,14 @@
 {
-  "devDependencies": {
-    "@wix/cli": "^1.0.0",
-    "@wix/eslint-plugin-cli": "^1.0.0",
-    "eslint": "^8.25.0",
-    "react": "16.14.0"
-  },
+  "name": "12-stones-velo-system",
+  "version": "1.0.0",
+  "description": "12 Stones GitHub Pages deploy system",
+  "main": "index.js",
   "scripts": {
-    "postinstall": "wix sync-types",
-    "dev": "wix dev",
-    "lint": "eslint ."
+    "deploy": "gh-pages -d frontend/dist",
+    "build": "powershell ./scripts/build.ps1"
+  },
+  "homepage": "https://jimlangford.github.io/12-Stones-Velo-System",
+  "devDependencies": {
+    "gh-pages": "^6.0.0"
   }
 }

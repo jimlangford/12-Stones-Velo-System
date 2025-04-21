@@ -1,0 +1,29 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f9fbfd;
+  padding: 2rem;
+}
+header {
+  text-align: center;
+  background: #003344;
+  color: white;
+  padding: 2rem;
+}
+.button-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin: 2rem 0;
+}
+.button {
+  padding: 1rem 2rem;
+  background: #004477;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+}
+.button.disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
