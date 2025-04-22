@@ -1,0 +1,6 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo "🔍 Running local tests…"
+npm test || { echo "❌ Tests failed — push aborted"; exit 1; }
+echo "✅ Tests passed"

@@ -4,11 +4,14 @@
   "description": "12 Stones GitHub Pages deploy system",
   "main": "index.js",
   "scripts": {
+    "test": "echo \"(no tests)\" && exit 0",
+    "build": "powershell ./scripts/build.ps1",
     "deploy": "gh-pages -d frontend/dist",
-    "build": "powershell ./scripts/build.ps1"
+    "prepare": "husky"
   },
   "homepage": "https://jimlangford.github.io/12-Stones-Velo-System",
   "devDependencies": {
-    "gh-pages": "^6.0.0"
+    "gh-pages": "^6.0.0",
+    "husky": "^9.1.7"
   }
 }
