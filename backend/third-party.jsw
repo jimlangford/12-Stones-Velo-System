@@ -1,0 +1,10 @@
+﻿import { getSecret } from 'wix-secrets-backend';
+
+export async function callServices() {
+  const wixAppId   = await getSecret("WIX_API_APP");
+  const stripeKey = await getSecret("_STRIPE");
+  const twelveKey = await getSecret("API_key_for_12sgi");
+
+  // Use them securely here
+  return { wixAppId, stripeKey, twelveKey };
+}
