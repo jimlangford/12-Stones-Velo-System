@@ -1,0 +1,9 @@
+/**
+ * backend/routers.jsw — placeholder implementation
+ */
+export function routeScroll(payload) {
+  return { ok: true, echo: payload };
+}
+export function routeTestimony(payload) {
+  return { ok: true, echo: payload };
+}
