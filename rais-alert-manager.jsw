@@ -1,0 +1,11 @@
+import wixData from 'wix-data';
+
+export async function getRAISAlertsForArticle(article) {
+    const result = await wixData.query("RAISAlerts")
+        .eq("linkedArticle", article)
+        .find();
+
+    return result.items.map(item => ({
+        message: item.alertMessage
+    }));
+}

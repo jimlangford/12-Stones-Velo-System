@@ -1,0 +1,25 @@
+import wixData from 'wix-data';
+
+export async function checkSECCompliance() {
+    const result = await wixData.query("Scrolls").limit(100).find();
+    return result.items.map(scroll => {
+        let issues = [];
+        let status = "Compliant";
+
+        if (!scroll.submittedBy || !scroll.timestamp) {
+            issues.push("Missing metadata");
+            status = "Non-Compliant";
+        }
+
+        if (!scroll.trustRating || scroll.trustRating < 70) {
+            issues.push("Low trust rating");
+            status = "At Risk";
+        }
+
+        return {
+            scrollId: scroll._id,
+            status,
+            issues: issues.join(", ")
+        };
+    });
+}

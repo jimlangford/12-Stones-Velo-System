@@ -1,0 +1,18 @@
+import wixData from 'wix-data';
+import { getGlobalScrollLedger } from 'backend/global-scroll-ledger';
+
+export async function exportLedgerAsCSV() {
+    const ledger = await getGlobalScrollLedger();
+
+    const header = "Scroll ID,Article,Submitted By,Timestamp,Trust Rating,Ledger Hash";
+    const rows = ledger.map(entry => [
+        entry.scrollId,
+        entry.article,
+        entry.submittedBy,
+        entry.timestamp,
+        entry.trustRating,
+        entry.ledgerHash
+    ].join(","));
+
+    return [header, ...rows].join("\n");
+}

@@ -1,0 +1,19 @@
+import wixData from 'wix-data';
+import { sha256 } from 'backend/hash-utils';
+
+export async function getGlobalScrollLedger() {
+    const result = await wixData.query("Scrolls").limit(100).find();
+
+    return result.items.map(scroll => ({
+        scrollId: scroll._id,
+        article: scroll.article,
+        submittedBy: scroll.submittedBy,
+        timestamp: scroll.timestamp,
+        trustRating: scroll.trustRating,
+        ledgerHash: sha256(JSON.stringify({
+            article: scroll.article,
+            submittedBy: scroll.submittedBy,
+            timestamp: scroll.timestamp
+        }))
+    }));
+}
