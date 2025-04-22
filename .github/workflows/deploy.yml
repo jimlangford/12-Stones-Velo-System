@@ -1,1 +1,29 @@
-﻿
+﻿name: ▶️ Deploy to Wix
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    env:
+      WIX_API_APP: ${{ secrets.WIX_API_APP }}
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - run: npm ci
+
+      - name: Install Wix CLI
+        run: npm install -g @wix/cli@latest
+
+      - name: Wix Login
+        run: wix login --apiSecret ${{ secrets.WIX_API_SECRET }}
+
+      - name: Publish to Wix
+        run: wix publish --site-id $WIX_API_APP --yes
