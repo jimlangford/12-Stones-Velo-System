@@ -1,0 +1,31 @@
+{
+  "scrolls": [
+    {
+      "id": "LCT-WFCF-MAUI0425",
+      "title": "Maui Sovereign Farming Scroll",
+      "lead": "James RCS Langford",
+      "advisor": "Rusty Walker",
+      "path": "/wfcf/scrolls/LCT-WFCF-MAUI0425.pdf",
+      "charterArticles": [
+        "VI",
+        "XIII",
+        "XXIV"
+      ],
+      "region": "Maui",
+      "status": "Published"
+    },
+    {
+      "id": "WFCF-COLF-RECYCLE0425",
+      "title": "Colorado\u2013Florida Recycled Agritech Scroll",
+      "lead": "Rusty Walker",
+      "advisor": "James Langford",
+      "path": "/wfcf/scrolls/WFCF-COLF-RECYCLE0425.pdf",
+      "charterArticles": [
+        "XIII",
+        "XXIV"
+      ],
+      "region": "Colorado-Florida",
+      "status": "Published"
+    }
+  ]
+}
