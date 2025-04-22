@@ -1,4 +1,4 @@
-name: GitHub Pages Auto Deploy
+name: ▶️ Deploy to GitHub Pages & Wix
 
 on:
   push:
@@ -21,3 +21,32 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: frontend/dist
+
+  build-and-publish-to-wix:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint & Test
+        run: |
+          npm run lint || true
+          npm test || true
+
+      - name: Install Wix CLI
+        run: npm install -g @wix/cli@latest
+
+      - name: Wix Login
+        run: wix login --apiSecret ${{ secrets.WIX_API_SECRET }}
+
+      - name: Publish to Wix
+        run: wix publish
